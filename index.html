@@ -1,41 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Kisha ❤️</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Kisha ❤️</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="container">
+    <div class="container">
+        <h1>Happy Birthday Kisha ❤️🎂</h1>
+        <p>I made something special for someone special ✨</p>
+        
+        <!-- Main Button to Start -->
+        <button id="startBtn" onclick="showNextGift()">🎁 Open Your Gifts</button>
 
-<h1>Happy Birthday Kisha ❤️🎂</h1>
+        <!-- GIFT 1 -->
+        <div id="gift1" class="gift-box hidden">
+            <h2>🌸 The Day I Met You</h2>
+            <img src="photo1.JPG" class="photo">
+            <p>"Kabhi nahi socha tha ki ek insaan meri life me itni special jagah bana lega."</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-<p>
-A small surprise made with lots of love, memories and effort 🌸
-</p>
+        <!-- GIFT 2 -->
+        <div id="gift2" class="gift-box hidden">
+            <h2>😊 Your Smile</h2>
+            <img src="photo2.JPG" class="photo">
+            <p>"Teri smile un cheezon me se hai jo bina reason bhi mood accha kar deti hai."</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-<button onclick="showGift()">
-🎁 Open Your First Gift
-</button>
+        <!-- GIFT 3 -->
+        <div id="gift3" class="gift-box hidden">
+            <h2>💪 Your Strength</h2>
+            <img src="photo3.JPG" class="photo">
+            <p>"Tu jitni strong hai, shayad tujhe khud bhi nahi pata."</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-<div id="giftBox" class="hidden">
+        <!-- GIFT 4 -->
+        <div id="gift4" class="gift-box hidden">
+            <h2>📸 Favourite Memory</h2>
+            <img src="photo4.JPG" class="photo">
+            <p>Our absolute best memory together! ✨</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-<h2>🌷 Gift #1</h2>
+        <!-- GIFT 5 -->
+        <div id="gift5" class="gift-box hidden">
+            <h2>❤️ Thank You</h2>
+            <img src="photo5.JPG" class="photo">
+            <p>"Har memory, har conversation aur har moment ke liye."</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-<img src="photo1.JPG" class="photo">
+        <!-- GIFT 6 -->
+        <div id="gift6" class="gift-box hidden">
+            <h2>🌷 Things I Admire About You</h2>
+            <img src="photo6.JPG" class="photo">
+            <div class="admire-points">
+                <p>⭐ Your beautiful heart</p>
+                <p>⭐ How caring you are</p>
+                <p>⭐ Your endless patience</p>
+                <p>⭐ The way you handle everything</p>
+                <p>⭐ Your positive vibe</p>
+            </div>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-<p>
-Kabhi nahi socha tha ki ek insaan meri life me itni special jagah bana lega. ❤️
-</p>
+        <!-- GIFT 7 -->
+        <div id="gift7" class="gift-box hidden">
+            <h2>🤭 A Little Secret</h2>
+            <img src="photo7.JPG" class="photo">
+            <p>"Tu pehle se jaanti hai, phir bhi bata deta hu... tu mere liye special hai. ❤️"</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-</div>
+        <!-- GIFT 8 -->
+        <div id="gift8" class="gift-box hidden">
+            <h2>✨ Our Journey</h2>
+            <img src="photo8.JPG" class="photo">
+            <p>From where we started to where we are today, every step has been beautiful. 💖</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-</div>
+        <!-- GIFT 9 -->
+        <div id="gift9" class="gift-box hidden">
+            <h2>👥 One Thing I Believe</h2>
+            <img src="photo9.JPG" class="photo">
+            <p>"Life ne kitni bhi baar alag karne ki koshish ki ho, lekin har baar hum fir connect ho gaye. Isliye lagta hai Bhagwan ki planning humse better hai. Aur jab tak unki blessings saath hain, mujhe lagta hai duniya ki koi bhi situation hume sach me alag nahi kar sakti. ❤️"</p>
+            <button onclick="showNextGift()">Next Gift ➡️</button>
+        </div>
 
-<script src="script.js"></script>
+        <!-- GIFT 10 -->
+        <div id="gift10" class="gift-box hidden">
+            <h2>💌 Message For You</h2>
+            <img src="photo10.JPG" class="photo">
+            <div class="long-letter">
+                <p>Yahan tera poora long birthday letter aayega jo tu likhna chahta hai...✍️</p>
+            </div>
+            <h3>Happiest Birthday Kisha ❤️🎂</h3>
+            <p>Thank you for being one of the most beautiful chapters of my life. 🌸</p>
+        </div>
+
+    </div>
 
 </body>
 </html>
