@@ -1,36 +1,34 @@
 let currentGift = 0;
-const totalGifts = 10;
 
 function showNextGift() {
-    // Pehle click par music shuru karne ke liye
+    // Pehle welcome button ko chupao
     if (currentGift === 0) {
         document.getElementById('startBtn').style.display = 'none';
-        
-        let music = document.getElementById('bgMusic');
-        if (music) {
-            music.play().catch(error => {
-                console.log("Audio play blocked by browser:", error);
-            });
-        }
     } else {
-        // Purane gift box ke andar ka Next button hide karne ke liye
-        let currentBox = document.getElementById(`gift${currentGift}`);
-        if (currentBox) {
-            let btn = currentBox.querySelector('button');
-            if (btn) btn.style.display = 'none';
+        // Purane gift box ko chupao style ko direct badal kar
+        let prevGift = document.getElementById('gift' + currentGift);
+        if (prevGift) {
+            prevGift.style.display = 'none';
         }
     }
 
-    // Agla gift counter badhane ke liye
+    // Agle gift ko badhao
     currentGift++;
+    let nextGift = document.getElementById('gift' + currentGift);
 
-    // Naye gift box ko screen par dikhane ke liye
-    if (currentGift <= totalGifts) {
-        let nextBox = document.getElementById(`gift${currentGift}`);
-        if (nextBox) {
-            nextBox.classList.remove('hidden');
-            // Smooth scroll karke naye gift par le jaane ke liye
-            nextBox.scrollIntoView({ behavior: 'smooth' });
-        }
+    // Agle gift box ko screen par dikhao style badal kar
+    if (nextGift) {
+        nextGift.style.display = 'block';
+        nextGift.classList.remove('hidden'); // Safe side ke liye dono rakh rahe hain
+    } else {
+        alert("Saare gifts khatam! Happy Birthday Kisha! ❤️");
+    }
+
+    // Music chalao agar file ho toh, warna crash na ho
+    let audio = document.getElementById('bgMusic');
+    if (audio) {
+        audio.play().catch(function(error) {
+            console.log("Audio play skip.");
+        });
     }
 }
