@@ -16,38 +16,36 @@
 <body>
 
     <h1 id="title">Happy Birthday Kisha ❤️🎂</h1>
+    <p>I made something special for someone special ✨</p>
     <button id="startBtn" onclick="showNext()">🎁 Open Your Gifts</button>
 
-    <!-- 10 Steps for 10 Photos -->
-    <div id="step1" class="gift-box"><img src="4953.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step2" class="gift-box"><img src="4954.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step3" class="gift-box"><img src="4955.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step4" class="gift-box"><img src="4956.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step5" class="gift-box"><img src="4957.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step6" class="gift-box"><img src="4958.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step7" class="gift-box"><img src="4959.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step8" class="gift-box"><img src="4960.png" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <!-- Add more steps here if you have more photos -->
+    <!-- 10 Photo Steps -->
+    <div id="step1" class="gift-box"><h3>The Day I Met You 🌸</h3><img src="photo1.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step2" class="gift-box"><h3>Your Smile 😊</h3><img src="photo2.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step3" class="gift-box"><h3>Your Strength 💪</h3><img src="photo3.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step4" class="gift-box"><h3>Favourite Memory 📸</h3><img src="photo4.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step5" class="gift-box"><h3>Thank You ❤️</h3><img src="photo5.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step6" class="gift-box"><h3>Admirable You 🌸</h3><img src="photo6.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step7" class="gift-box"><h3>A Little Secret 🤭</h3><img src="photo7.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step8" class="gift-box"><h3>Our Journey ✨</h3><img src="photo8.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step9" class="gift-box"><h3>My Belief 💙</h3><img src="photo9.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step10" class="gift-box"><h3>Final Gift 🎁</h3><img src="photo10.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
 
     <!-- Final Letter -->
     <div id="letter" class="letter-box">
-        <h2>💌 A Special Note for Kisha</h2>
-        <p>Yahan tera poora long birthday letter aayega jo tumne socha hai... <br><br> Happy Birthday Kisha! ❤️</p>
+        <h2>💌 A Special Note</h2>
+        <p>Happiest Birthday Kisha ❤️🎂<br><br>
+        Thank you for being one of the most beautiful chapters of my life. 🌸</p>
     </div>
 
     <script>
         let currentStep = 0;
         function showNext() {
-            // Party Popper
             confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
-            
-            // Hide previous
             if(currentStep > 0) document.getElementById('step'+currentStep).style.display = 'none';
             document.getElementById('startBtn').style.display = 'none';
             
             currentStep++;
-            
-            // Show next or Letter
             if(document.getElementById('step'+currentStep)) {
                 document.getElementById('step'+currentStep).style.display = 'block';
             } else {
