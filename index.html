@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Kisha ❤️</title>
+    <title>Happy Birthday Kisha ❤️🎂</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
         body { text-align: center; font-family: 'Arial', sans-serif; background: #fff0f5; padding: 20px; }
         .gift-box { display: none; margin-top: 20px; }
         .photo { width: 90%; max-width: 400px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 15px; }
+        .message { font-size: 18px; color: #555; margin: 10px 20px; font-style: italic; font-weight: bold; }
         .letter-box { background: white; padding: 25px; border-radius: 15px; border: 2px dashed #ff69b4; width: 85%; margin: 20px auto; display: none; text-align: center; line-height: 1.6; }
         button { padding: 12px 25px; background: #ff69b4; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 10px; }
     </style>
@@ -19,38 +20,34 @@
     <p>I made something special for someone special ✨</p>
     <button id="startBtn" onclick="showNext()">🎁 Open Your Gifts</button>
 
-    <!-- 10 Photo Steps -->
-    <div id="step1" class="gift-box"><h3>The Day I Met You 🌸</h3><img src="photo1.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step2" class="gift-box"><h3>Your Smile 😊</h3><img src="photo2.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step3" class="gift-box"><h3>Your Strength 💪</h3><img src="photo3.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step4" class="gift-box"><h3>Favourite Memory 📸</h3><img src="photo4.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step5" class="gift-box"><h3>Thank You ❤️</h3><img src="photo5.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step6" class="gift-box"><h3>Admirable You 🌸</h3><img src="photo6.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step7" class="gift-box"><h3>A Little Secret 🤭</h3><img src="photo7.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step8" class="gift-box"><h3>Our Journey ✨</h3><img src="photo8.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step9" class="gift-box"><h3>My Belief 💙</h3><img src="photo9.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
-    <div id="step10" class="gift-box"><h3>Final Gift 🎁</h3><img src="photo10.JPG" class="photo"><br><button onclick="showNext()">Next ➡️</button></div>
+    <!-- Gift Steps -->
+    <div id="step1" class="gift-box"><h3>The Day I Met You 🌸</h3><img src="4953_2.png" class="photo"><p class="message">"Kabhi nahi socha tha ki ek insaan meri life me itni special jagah bana lega."</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step2" class="gift-box"><h3>Your Smile 😊</h3><img src="4954_2.png" class="photo"><p class="message">"Teri smile un cheezon me se hai jo bina reason bhi mood accha kar deti hai."</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step3" class="gift-box"><h3>Your Strength 💪</h3><img src="4955_2.png" class="photo"><p class="message">"Tu jitni strong hai, shayad tujhe khud bhi nahi pata."</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step4" class="gift-box"><h3>Favourite Memory 📸</h3><img src="4956_2.png" class="photo"><p class="message">"Ye pal humesha mere dil ke bahut kareeb rahega."</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step5" class="gift-box"><h3>Thank You ❤️</h3><img src="4957_2.png" class="photo"><p class="message">"Har memory, har conversation aur har us moment ke liye, thank you."</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step6" class="gift-box"><h3>Things I Admire About You 🌸</h3><img src="4958_2.png" class="photo"><p class="message">"Tumhari saadgi, tumhari baatein aur tumhara dil... sab kuch bahut pyaara hai."</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step7" class="gift-box"><h3>A Little Secret 🤭</h3><img src="4959_2.png" class="photo"><p class="message">"Tu pehle se jaanti hai, phir bhi bata deta hu... tu mere liye special hai. ❤️"</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step8" class="gift-box"><h3>Our Journey ✨</h3><img src="4960_2.png" class="photo"><p class="message">"Humari choti si kahani, jo waqt ke saath aur bhi khubsurat hoti gayi."</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step9" class="gift-box"><h3>One Thing I Believe 💙</h3><img class="photo" style="display:none;"><p class="message">"Life ne kitni bhi baar alag karne ki koshish ki, lekin har baar hum fir connect ho gaye. Isliye lagta hai Bhagwan ki planning humse better hai. Aur jab tak unki blessings saath hain, mujhe lagta hai duniya ki koi bhi situation hume sach me alag nahi kar sakti. ❤️"</p><button onclick="showNext()">Next ➡️</button></div>
+    <div id="step10" class="gift-box"><h3>Final Gift 🎁</h3><p class="message">"Ek aakhri aur sabse khaas baat, bas tumhare liye."</p><button onclick="showNext()">Next ➡️</button></div>
 
     <!-- Final Letter -->
     <div id="letter" class="letter-box">
         <h2>💌 A Special Note</h2>
         <p>
-            Happiest Birthday Kisha 🎂👑<br><br>
+            Happiest Birthday Kisha ❤️🎂<br><br>
+            Thank you for being one of the most beautiful chapters of my life. 🌸<br><br>
             Pta nhi yrr har saal tera birthday aata h toh mujhe lagta h ki m kitna lucky hu ki mere life me tu aayi 🌸 aur m ess baar bhi tujhe wish kr para hun. 😇<br><br>
             Sach batau toh kuch log life me sirf aate nhi h, vo apni ek alag hi jagah bana lete h aur unhi logo me se ek h. ❤️<br><br>
             Tere sath jitni bhi baatein hui, jitni bhi memories bani, jitni bhi ladai-jhagde hue, sabne mujhe kuch na kuch sikhaya h. Aur aaj bhi jab piche mudh ke dekhta hu toh realize hota h ki tu meri life ka bahut important part rahi h aur hamesha rahegi. 😇<br><br>
             Yrr tu bahut strong h. Shayad jitna tu khud ko samajhti h usse bhi jyada. Maine tujhe har situation me khud ko sambhalte hue dekha h aur isi baat ki m hamesha respect karta hu. ❤️<br><br>
-            Aur ek baat jo m aaj bhi maanta hu, chahe life me kitne bhi ups and downs aaye, kitni bhi misunderstandings hui, kitni bhi baar laga ki shayad ab sab khatam ho jayega, but end me dono fir kisi na kisi wajah se connected reh hi gaye. 😇<br><br>
-            Yrr kabhi kabhi piche mudh ke dekhta hu toh lagta h ki life ne hum dono ko kitni baar alag karne ki koshish ki, kitni baar aisi situations aisi bani ki laga ab shayad baat kabhi nhi hogi. Lekin har baar kisi na kisi bahane se hum fir connect ho gaye. Isliye ab mujhe lagta h ki planning humse better hai, kyunki agar unhe hume alag hi karna hota toh shayad hum kab ke alag ho chuke hote. Aur jab tak Bhagwan ki blessings aur unka haath humare saath h, tab tak mujhe lagta h ki duniya ki koi situation ya koi bhi insaan hume sach me alag nhi kar sakta. ❤️✨<br><br>
             Bas ek hi dua h ki life me tujhe kabhi kisi cheez ki kami na ho. Jo sapne tu dekhti h vo sab poore ho, jo khushiyan tu deserve karti h vo tujhe duniya ki har khushi se bhi jyada mile. 🌸✨<br><br>
             Aur haan, agar kabhi life tough lage, sab ulta-pulta lage ya lage ki koi samajhne wala nhi h, toh yaad rakhna ki ek pagal insaan h jo hamesha tere liye dua karega aur teri smile dekh kar hamesha khush hoga. 😇🌸<br><br>
-            Pta nhi future me hum kitna baat karenge, kitna milenge ya life hume kis direction me le jayegi, but itna zarur pta h ki tu meri life ki un yaadon me se h jo kabhi purani nhi hongi. ❤️<br><br>
             Teri khushi mere liye hamesha important rahegi. Chahe hum kitne bhi busy ho jaye ya kitni bhi ladai ho jaye, meri respect aur care tere liye kabhi kam nhi hogi. 😇❤️<br><br>
-            Aur thank you yrr, har us choti-badi memory ke liye jo tune mujhe di. Shayad tujhe idea bhi nhi h ki tune meri life me kitna positive impact dala h. 😇<br><br>
             Tu meri life ke un logo me se h jinke liye mere dil me hamesha ek special jagah rahegi. Aur sach kahu toh tujhe khush dekhna mujhe hamesha accha lagta h. ❤️❤️<br><br>
-            Bas hamesha khush rehna, smile karte rehna, apna khayal rakhna aur life me bahut aage badhna. 😇<br><br>
             Once again Happiest Birthday Kisha 🎂👑❤️<br>
-            Bhagwan kare meri bhi umar tujhe lag jaye, teri har wish poori ho aur teri smile kabhi kam na ho. Hamesha aise hi chamakti rehna, kyunki tu jitna sochti h usse kahin jyada special h. 😇❤️✨
+            Hamesha aise hi chamakti rehna, kyunki tu jitna sochti h usse kahin jyada special h. 😇❤️✨
         </p>
     </div>
 
