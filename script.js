@@ -2,9 +2,16 @@ let currentGift = 0;
 const totalGifts = 10;
 
 function showNextGift() {
-    // Shuruat ka main button hide karne ke liye
+    // Pehle click par music shuru karne ke liye
     if (currentGift === 0) {
         document.getElementById('startBtn').style.display = 'none';
+        
+        let music = document.getElementById('bgMusic');
+        if (music) {
+            music.play().catch(error => {
+                console.log("Audio play blocked by browser:", error);
+            });
+        }
     } else {
         // Purane gift box ke andar ka Next button hide karne ke liye
         let currentBox = document.getElementById(`gift${currentGift}`);
