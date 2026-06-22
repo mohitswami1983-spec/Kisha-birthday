@@ -6,16 +6,24 @@
     <title>Happy Birthday Kisha ❤️🎂</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
-        body { text-align: center; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #fff0f5 0%, #ffe4e6 100%); padding: 10px; min-height: 100vh; margin: 0; }
-        h1 { color: #d63384; margin-top: 20px; }
-        .gift-box { display: none; margin: 20px auto; background: rgba(255, 255, 255, 0.9); padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2); width: 90%; max-width: 450px; }
+        body { text-align: center; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #fff0f5 0%, #ffe4e6 100%); padding: 20px; min-height: 100vh; margin: 0; }
+        h1 { color: #d63384; margin-bottom: 5px; }
+        .gift-box { display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2); width: 90%; max-width: 400px; margin: 20px auto; }
         .photo { width: 100%; border-radius: 20px; border: 5px solid #ffccd5; margin-bottom: 15px; }
-        .calendar { background: white; border-radius: 15px; padding: 15px; margin: 20px auto; width: 85%; max-width: 320px; box-shadow: 0 4px 15px rgba(214, 51, 132, 0.1); }
+        .message { font-size: 19px; color: #881337; margin: 15px 0; font-style: italic; font-weight: 600; }
+        
+        /* Calendar */
+        .calendar { background: white; border-radius: 15px; padding: 15px; margin: 20px auto; width: 90%; max-width: 300px; box-shadow: 0 4px 15px rgba(214, 51, 132, 0.1); }
         table { width: 100%; border-collapse: collapse; }
-        .heart-date { color: #d63384; font-size: 25px; }
-        .scroll-container { cursor: pointer; margin: 20px auto; }
-        .letter-box { background: white; padding: 40px; border-radius: 0; border: none; width: 100%; height: 100vh; position: fixed; top: 0; left: 0; display: none; text-align: left; line-height: 1.8; overflow-y: auto; box-sizing: border-box; font-size: 18px; color: #4a4a4a; }
-        button { padding: 15px 30px; background: #ff69b4; color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 18px; margin-top: 20px; }
+        .heart-date { color: #d63384; font-weight: bold; background: #ffccd5; border-radius: 50%; }
+
+        /* Scroll Animation Styles */
+        .scroll-container { cursor: pointer; margin: 30px auto; transition: 0.3s; }
+        .scroll-container:hover { transform: scale(1.05); }
+        
+        /* Letter Box */
+        .letter-box { background: white; padding: 40px; width: 100%; height: 100vh; position: fixed; top: 0; left: 0; display: none; text-align: left; line-height: 1.8; overflow-y: auto; box-sizing: border-box; font-size: 18px; color: #4a4a4a; z-index: 1000; }
+        button { padding: 15px 30px; background: #ff69b4; color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 18px; margin-top: 20px; box-shadow: 0 4px 10px rgba(214, 51, 132, 0.3); }
     </style>
 </head>
 <body>
@@ -30,55 +38,60 @@
                 <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
                 <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
                 <tr><td>21</td><td>22</td><td>23</td><td>24</td><td class="heart-date">❤️</td><td>26</td><td>27</td></tr>
-                <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
             </table>
         </div>
         <button onclick="startGifts()">🎁 Open Your Gifts</button>
     </div>
 
-    <!-- 10 Photos -->
-    <div id="step1" class="gift-box"><h3>Memory 1</h3><img src="photo1.JPG" class="photo"><br><button onclick="showNext(1)">Next ➡️</button></div>
-    <div id="step2" class="gift-box"><h3>Memory 2</h3><img src="photo2.JPG" class="photo"><br><button onclick="showNext(2)">Next ➡️</button></div>
-    <div id="step3" class="gift-box"><h3>Memory 3</h3><img src="photo3.JPG" class="photo"><br><button onclick="showNext(3)">Next ➡️</button></div>
-    <div id="step4" class="gift-box"><h3>Memory 4</h3><img src="photo4.JPG" class="photo"><br><button onclick="showNext(4)">Next ➡️</button></div>
-    <div id="step5" class="gift-box"><h3>Memory 5</h3><img src="photo5.JPG" class="photo"><br><button onclick="showNext(5)">Next ➡️</button></div>
-    <div id="step6" class="gift-box"><h3>Memory 6</h3><img src="photo6.JPG" class="photo"><br><button onclick="showNext(6)">Next ➡️</button></div>
-    <div id="step7" class="gift-box"><h3>Memory 7</h3><img src="photo7.JPG" class="photo"><br><button onclick="showNext(7)">Next ➡️</button></div>
-    <div id="step8" class="gift-box"><h3>Memory 8</h3><img src="photo8.JPG" class="photo"><br><button onclick="showNext(8)">Next ➡️</button></div>
-    <div id="step9" class="gift-box"><h3>Memory 9</h3><img src="photo9.JPG" class="photo"><br><button onclick="showNext(9)">Next ➡️</button></div>
-    
+    <!-- Gift Steps -->
+    <script>
+        const photos = ["photo1.JPG", "photo2.JPG", "photo3.JPG", "photo4.JPG", "photo5.JPG", "photo6.JPG", "photo7.JPG", "photo8.JPG", "photo9.JPG", "photo10.JPG"];
+        for(let i=1; i<=9; i++) {
+            document.write(`
+                <div id="step${i}" class="gift-box">
+                    <h3>Memory ${i}</h3>
+                    <img src="${photos[i-1]}" class="photo">
+                    <button onclick="showNext(${i})">Next ➡️</button>
+                </div>
+            `);
+        }
+    </script>
+
+    <!-- Final Step with Roll Animation -->
     <div id="step10" class="gift-box">
         <h3>Final Gift 💌</h3>
         <div class="scroll-container" onclick="openLetter()">
-            <div style="font-size: 60px;">🎀</div>
-            <div style="font-size: 100px;">📜</div>
+            <div style="font-size: 80px;">📜</div>
             <p style="font-weight: bold; color: #d63384;">Click to open the message</p>
         </div>
     </div>
 
     <div id="letter" class="letter-box">
-        <p><b>Happiest Birthday Kisha 🎂👑❤️</b><br><br>
-        Pta nhi yrr har saal tera birthday aata h toh mujhe lagta h ki m kitna lucky hu ki mere life me tu aayi ✨🎥 and m ess baar bhi tujhe wish kr para hun. 🫂🧿<br><br>
-        Sach batau toh kuch log life me sirf aate nhi h, vo apni ek alag hi jagah bana lete h, aur tu unhi logo me se ek h. ❤️<br><br>
-        Tere sath jitni bhi baatein hui, jitni bhi memories bani, jitni bhi ladai-jhagde hue, har cheez ne mujhe kuch na kuch sikhaya h. Aur aaj bhi jab piche mudh ke dekhta hu toh realize hota h ki tu meri life ka bahut important part rahi h aur hamesha rahegi. 🥺🫂<br><br>
-        Yrr tu bahut strong h. Shayad jitna tu khud ko samajhti h usse bhi jyada. Maine tujhe har situation me khud ko sambhalte hue dekha h aur isi baat ki m hamesha respect karta hu. ❤️<br><br>
-        Aur ek baat jo m aaj bhi maanta hu, chahe life me kitne bhi ups and downs aaye, kitni bhi misunderstandings hui, kitni bhi baar laga ki shayad ab sab khatam ho jayega, but end me hum dono fir kisi na kisi wajah se connected reh hi gaye. 🥺🎥<br><br>
-        Yrr kabhi kabhi piche mudh ke dekhta hu toh lagta h ki life ne hum dono ko kitni baar alag karne ki koshish ki, kitni baar situations aisi bani ki laga ab shayad baat kabhi nhi hogi. Lekin har baar kisi na kisi tarike se hum fir connect ho gaye. Isliye ab mujhe lagta h ki Bhagwan ki planning humse better h, kyunki agar unhe hume alag hi karna hota toh shayad hum kab ke alag ho chuke hote. Aur jab tak Bhagwan ki blessings aur unka haath humare saath h, tab tak mujhe lagta h ki duniya ki koi bhi situation ya koi bhi insaan hume sach me alag nhi kar sakta. ❤️🥺✨<br><br>
-        Bas ek hi dua h ki life me tujhe kabhi kisi cheez ki kami na ho. Jo sapne tu dekhti h vo sab poore ho, jo khushiyan tu deserve karti h vo tujhe duniya ki har khushi se bhi jyada mile. 🌸✨<br><br>
-        Aur haan, agar kabhi life tough lage, sab ulta-pulta lage ya lage ki koi samajhne wala nhi h, toh yaad rakhna ki ek pagal insaan h jo hamesha tere liye dua karega aur teri smile dekh kar khush hoga. 🎥❤️<br><br>
-        Pta nhi future me hum kitna baat karenge, kitna milenge ya life hume kis direction me le jayegi, but itna zarur pta h ki tu meri life ki un yaadon me se h jo kabhi purani nhi hongi. 🥺❤️<br><br>
-        Teri khushi mere liye hamesha important rahegi. Chahe hum kitne bhi busy ho jaye ya kitni bhi ladai ho jaye, meri respect aur care tere liye kabhi kam nhi hogi. ☝️❤️<br><br>
-        Aur thank you yrr, har us choti-badi memory ke liye jo tune mujhe di. Shayad tujhe idea bhi nhi h ki tune meri life me kitna positive impact dala h. 🎥✨<br><br>
-        Tu meri life ke un logo me se h jinke liye mere dil me hamesha ek special jagah rahegi. Aur sach kahu toh tujhe khush dekhna mujhe hamesha accha lagta h. ❤️🥺<br><br>
-        Bas hamesha khush rehna, smile karte rehna, apna khayal rakhna aur life me bahut aage badhna. ❤️🌍<br><br>
-        Once again Happiest Birthday Kisha 🎂👑❤️<br><br>
-        Bhagwan kare meri bhi umar tujhe lag jaye, teri har wish poori ho aur teri smile kabhi kam na ho. Hamesha aise hi chamakti rehna, kyunki tu jitna sochti h usse kahin jyada special h. 🥺🎥❤️✨</p>
+        <h2 style="color: #ff69b4; text-align: center;">💌 A Special Note</h2>
+        <p>
+            Happiest Birthday Kisha 🎂👑❤️<br><br>
+            Pta nhi yrr har saal tera birthday aata h toh mujhe lagta h ki m kitna lucky hu ki mere life me tu aayi ✨🎥 and m ess baar bhi tujhe wish kr para hun. 🫂🧿<br><br>
+            Sach batau toh kuch log life me sirf aate nhi h, vo apni ek alag hi jagah bana lete h, aur tu unhi logo me se ek h. ❤️<br><br>
+            Tere sath jitni bhi baatein hui, jitni bhi memories bani, jitni bhi ladai-jhagde hue, har cheez ne mujhe kuch na kuch sikhaya h. Aur aaj bhi jab piche mudh ke dekhta hu toh realize hota h ki tu meri life ka bahut important part rahi h aur hamesha rahegi. 🥺🫂<br><br>
+            Yrr tu bahut strong h. Shayad jitna tu khud ko samajhti h usse bhi jyada. Maine tujhe har situation me khud ko sambhalte hue dekha h aur isi baat ki m hamesha respect karta hu. ❤️<br><br>
+            Aur ek baat jo m aaj bhi maanta hu, chahe life me kitne bhi ups and downs aaye, kitni bhi misunderstandings hui, kitni bhi baar laga ki shayad ab sab khatam ho jayega, but end me hum dono fir kisi na kisi wajah se connected reh hi gaye. 🥺🎥<br><br>
+            Yrr kabhi kabhi piche mudh ke dekhta hu toh lagta h ki life ne hum dono ko kitni baar alag karne ki koshish ki, kitni baar situations aisi bani ki laga ab shayad baat kabhi nhi hogi. Lekin har baar kisi na kisi tarike se hum fir connect ho gaye. Isliye ab mujhe lagta h ki Bhagwan ki planning humse better h, kyunki agar unhe hume alag hi karna hota toh shayad hum kab ke alag ho chuke hote. Aur jab tak Bhagwan ki blessings aur unka haath humare saath h, tab tak mujhe lagta h ki duniya ki koi bhi situation ya koi bhi insaan hume sach me alag nhi kar sakta. ❤️🥺✨<br><br>
+            Bas ek hi dua h ki life me tujhe kabhi kisi cheez ki kami na ho. Jo sapne tu dekhti h vo sab poore ho, jo khushiyan tu deserve karti h vo tujhe duniya ki har khushi se bhi jyada mile. 🌸✨<br><br>
+            Aur haan, agar kabhi life tough lage, sab ulta-pulta lage ya lage ki koi samajhne wala nhi h, toh yaad rakhna ki ek pagal insaan h jo hamesha tere liye dua karega aur teri smile dekh kar khush hoga. 🎥❤️<br><br>
+            Pta nhi future me hum kitna baat karenge, kitna milenge ya life hume kis direction me le jayegi, but itna zarur pta h ki tu meri life ki un yaadon me se h jo kabhi purani nhi hongi. 🥺❤️<br><br>
+            Teri khushi mere liye hamesha important rahegi. Chahe hum kitne bhi busy ho jaye ya kitni bhi ladai ho jaye, meri respect aur care tere liye kabhi kam nhi hogi. ☝️❤️<br><br>
+            Aur thank you yrr, har us choti-badi memory ke liye jo tune mujhe di. Shayad tujhe idea bhi nhi h ki tune meri life me kitna positive impact dala h. 🎥✨<br><br>
+            Tu meri life ke un logo me se h jinke liye mere dil me hamesha ek special jagah rahegi. Aur sach kahu toh tujhe khush dekhna mujhe hamesha accha lagta h. ❤️🥺<br><br>
+            Bas hamesha khush rehna, smile karte rehna, apna khayal rakhna aur life me bahut aage badhna. ❤️🌍<br><br>
+            Once again Happiest Birthday Kisha 🎂👑❤️<br><br>
+            Bhagwan kare meri bhi umar tujhe lag jaye, teri har wish poori ho aur teri smile kabhi kam na ho. Hamesha aise hi chamakti rehna, kyunki tu jitna sochti h usse kahin jyada special h. 🥺🎥❤️✨
+        </p>
     </div>
 
     <script>
         function startGifts() { document.getElementById('home-page').style.display = 'none'; document.getElementById('step1').style.display = 'block'; }
-        function showNext(curr) { document.getElementById('step'+curr).style.display = 'none'; let next = curr+1; if(document.getElementById('step'+next)) document.getElementById('step'+next).style.display = 'block'; }
-        function openLetter() { document.getElementById('step10').style.display = 'none'; document.getElementById('letter').style.display = 'block'; confetti({ particleCount: 300, spread: 200, origin: { y: 0.5 } }); }
+        function showNext(curr) { document.getElementById('step'+curr).style.display = 'none'; let next = curr+1; if(document.getElementById('step'+next)) document.getElementById('step'+next).style.display = 'block'; else document.getElementById('step10').style.display = 'block'; }
+        function openLetter() { document.getElementById('step10').style.display = 'none'; document.getElementById('letter').style.display = 'block'; confetti({ particleCount: 300, spread: 200 }); }
     </script>
 </body>
 </html>
