@@ -6,29 +6,30 @@
     <title>Happy Birthday Kisha ❤️🎂</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
-        body { text-align: center; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #fff0f5 0%, #ffe4e6 100%); padding: 20px; min-height: 100vh; }
+        body { text-align: center; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #fff0f5 0%, #ffe4e6 100%); padding: 20px; min-height: 100vh; margin: 0; }
         h1 { color: #d63384; margin-bottom: 5px; }
         
-        /* Home Page Styles */
         #home-page { display: block; }
-        .gift-box { display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2); }
+        .gift-box { display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2); width: 90%; max-width: 400px; margin: 20px auto; }
         .photo { width: 90%; max-width: 400px; border-radius: 20px; border: 5px solid #ffccd5; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 15px; }
         .message { font-size: 19px; color: #881337; margin: 15px 20px; font-style: italic; font-weight: 600; }
         
-        /* Calendar Styles */
         .calendar { background: white; border-radius: 15px; padding: 15px; margin: 20px auto; width: 90%; max-width: 300px; box-shadow: 0 4px 15px rgba(214, 51, 132, 0.1); }
         .calendar table { width: 100%; border-collapse: collapse; }
         .calendar th, .calendar td { padding: 8px; text-align: center; }
         .heart-date { color: #d63384; font-weight: bold; background: #ffccd5; border-radius: 50%; }
 
-        .letter-box { background: white; padding: 30px; border-radius: 25px; border: 3px solid #ff69b4; width: 85%; margin: 20px auto; display: none; text-align: center; line-height: 1.8; color: #4a4a4a; box-shadow: 0 10px 25px rgba(214, 51, 132, 0.15); }
+        /* Letter & Scroll Styles */
+        .letter-box { background: white; padding: 40px; border-radius: 0; width: 100%; height: 100vh; position: fixed; top: 0; left: 0; display: none; text-align: left; line-height: 1.8; color: #4a4a4a; overflow-y: auto; z-index: 1000; box-sizing: border-box; }
+        .scroll-container { cursor: pointer; margin: 30px auto; transition: 0.3s; }
+        .scroll-container:hover { transform: scale(1.05); }
+        
         button { padding: 15px 30px; background: #ff69b4; color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 18px; margin-top: 20px; transition: 0.3s; box-shadow: 0 4px 10px rgba(214, 51, 132, 0.3); }
         button:hover { background: #d63384; transform: scale(1.05); }
     </style>
 </head>
 <body>
 
-    <!-- Home Page -->
     <div id="home-page">
         <h1>Happy Birthday Kisha ❤️🎂</h1>
         <p style="color: #d63384;">I made something special for someone special ✨</p>
@@ -40,7 +41,6 @@
                 <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
                 <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
                 <tr><td>21</td><td>22</td><td>23</td><td>24</td><td class="heart-date">❤️</td><td>26</td><td>27</td></tr>
-                <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
             </table>
         </div>
         <button onclick="startGifts()">🎁 Open Your Gifts</button>
@@ -56,11 +56,16 @@
     <div id="step7" class="gift-box"><h3>A Little Secret 🤭</h3><img src="photo7.JPG" class="photo"><p class="message">"Tu pehle se jaanti hai, phir bhi bata deta hu... tu mere liye special hai. ❤️"</p><button onclick="showNext(7)">Next ➡️</button></div>
     <div id="step8" class="gift-box"><h3>Our Journey ✨</h3><img src="photo8.JPG" class="photo"><p class="message">"Humari choti si kahani, jo waqt ke saath aur bhi khubsurat hoti gayi."</p><button onclick="showNext(8)">Next ➡️</button></div>
     <div id="step9" class="gift-box"><h3>One Thing I Believe 💙</h3><img src="photo9.JPG" class="photo"><p class="message">"Life ne kitni bhi baar alag karne ki koshish ki, lekin har baar hum fir connect ho gaye. Isliye lagta hai Bhagwan ki planning humse better hai."</p><button onclick="showNext(9)">Next ➡️</button></div>
-    <div id="step10" class="gift-box"><h3>Final Gift 🎁</h3><img src="photo10.JPG" class="photo"><p class="message">"Ek aakhri aur sabse khaas baat, bas tumhare liye."</p><button onclick="showNext(10)">Next ➡️</button></div>
+    <div id="step10" class="gift-box"><h3>Final Gift 🎁</h3><img src="photo10.JPG" class="photo">
+        <div class="scroll-container" onclick="openLetter()">
+            <div style="font-size: 70px;">🎀 📜</div>
+            <p style="font-weight: bold; color: #d63384;">Click to open the message</p>
+        </div>
+    </div>
 
     <div id="letter" class="letter-box">
-        <h2 style="color: #ff69b4;">💌 A Special Note</h2>
-        <p style="text-align: left;">
+        <h2 style="color: #ff69b4; text-align: center;">💌 A Special Note</h2>
+        <p>
             Happiest Birthday Kisha 🎂👑❤️<br><br>
             Pta nhi yrr har saal tera birthday aata h toh mujhe lagta h ki m kitna lucky hu ki mere life me tu aayi ✨🎥 and m ess baar bhi tujhe wish kr para hun. 🫂🧿<br><br>
             Sach batau toh kuch log life me sirf aate nhi h, vo apni ek alag hi jagah bana lete h, aur tu unhi logo me se ek h. ❤️<br><br>
@@ -93,8 +98,13 @@
             if(document.getElementById('step'+next)) {
                 document.getElementById('step'+next).style.display = 'block';
             } else {
-                document.getElementById('letter').style.display = 'block';
+                document.getElementById('step10').style.display = 'block';
             }
+        }
+        function openLetter() {
+            document.getElementById('step10').style.display = 'none';
+            document.getElementById('letter').style.display = 'block';
+            confetti({ particleCount: 300, spread: 200, origin: { y: 0.5 } });
         }
     </script>
 </body>
