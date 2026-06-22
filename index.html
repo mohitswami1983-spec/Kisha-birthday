@@ -6,11 +6,18 @@
     <title>Happy Birthday Kisha ❤️🎂</title>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
-        body { text-align: center; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #fff0f5 0%, #ffe4e6 100%); padding: 30px; min-height: 100vh; }
-        h1 { color: #d63384; text-shadow: 1px 1px 2px #ffb6c1; }
+        body { text-align: center; font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #fff0f5 0%, #ffe4e6 100%); padding: 20px; min-height: 100vh; }
+        h1 { color: #d63384; margin-bottom: 5px; }
         .gift-box { display: none; margin-top: 20px; background: rgba(255, 255, 255, 0.7); padding: 20px; border-radius: 20px; box-shadow: 0 8px 20px rgba(214, 51, 132, 0.2); }
         .photo { width: 90%; max-width: 400px; border-radius: 20px; border: 5px solid #ffccd5; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 15px; }
         .message { font-size: 19px; color: #881337; margin: 15px 20px; font-style: italic; font-weight: 600; }
+        
+        /* Calendar Styles */
+        .calendar { background: white; border-radius: 15px; padding: 15px; margin: 20px auto; width: 90%; max-width: 300px; box-shadow: 0 4px 15px rgba(214, 51, 132, 0.1); }
+        .calendar table { width: 100%; border-collapse: collapse; }
+        .calendar th, .calendar td { padding: 8px; text-align: center; }
+        .heart-date { color: #d63384; font-weight: bold; background: #ffccd5; border-radius: 50%; }
+
         .letter-box { background: white; padding: 30px; border-radius: 25px; border: 3px solid #ff69b4; width: 85%; margin: 20px auto; display: none; text-align: center; line-height: 1.8; color: #4a4a4a; box-shadow: 0 10px 25px rgba(214, 51, 132, 0.15); }
         button { padding: 15px 30px; background: #ff69b4; color: white; border: none; border-radius: 50px; cursor: pointer; font-size: 18px; margin-top: 20px; transition: 0.3s; box-shadow: 0 4px 10px rgba(214, 51, 132, 0.3); }
         button:hover { background: #d63384; transform: scale(1.05); }
@@ -20,8 +27,23 @@
 
     <h1>Happy Birthday Kisha ❤️🎂</h1>
     <p style="color: #d63384;">I made something special for someone special ✨</p>
+
+    <!-- Calendar -->
+    <div class="calendar">
+        <h3>June 2026</h3>
+        <table>
+            <tr><th>Su</th><th>Mo</th><th>Tu</th><th>We</th><th>Th</th><th>Fr</th><th>Sa</th></tr>
+            <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+            <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+            <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+            <tr><td>21</td><td>22</td><td>23</td><td>24</td><td class="heart-date">25❤️</td><td>26</td><td>27</td></tr>
+            <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+        </table>
+    </div>
+
     <button id="startBtn" onclick="showNext()">🎁 Open Your Gifts</button>
 
+    <!-- Gift Steps -->
     <div id="step1" class="gift-box"><h3>The Day I Met You 🌸</h3><img src="photo1.JPG" class="photo"><p class="message">"Kabhi nahi socha tha ki ek insaan meri life me itni special jagah bana lega."</p><button onclick="showNext()">Next ➡️</button></div>
     <div id="step2" class="gift-box"><h3>Your Smile 😊</h3><img src="photo2.JPG" class="photo"><p class="message">"Teri smile un cheezon me se hai jo bina reason bhi mood accha kar deti hai."</p><button onclick="showNext()">Next ➡️</button></div>
     <div id="step3" class="gift-box"><h3>Your Strength 💪</h3><img src="photo3.JPG" class="photo"><p class="message">"Tu jitni strong hai, shayad tujhe khud bhi nahi pata."</p><button onclick="showNext()">Next ➡️</button></div>
